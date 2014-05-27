@@ -1,0 +1,14 @@
+{% if list %}
+<ul>
+	{% for o in list %}
+	<li>{{ o.name }}:{{o.price}}</li>
+	{% endfor %}
+</ul>
+{% else %}
+	<p>No minerals.</p>
+{% endif %}
+<form action="" method="post">
+	{% csrf_token %}
+    	<input type="text" name="text" value="" />
+	<input type="submit" value="calc" />
+</form>

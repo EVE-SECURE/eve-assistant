@@ -1,11 +1,16 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.template import RequestContext, loader
+
 from marketApi import *
+
 
 # Create your views here.
 
 def index(request):
-	s = ""
-	for o in getMinerals():
-		s += o['name'] + ':' + o['price'] + ','
-	return HttpResponse(s)
+	list = getMinerals()
+	template = loader.get_template('calc/index.tmp')
+	context = RequestContext(request, {
+		'list': list,
+	})
+	return HttpResponse(template.render(context))

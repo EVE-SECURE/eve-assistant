@@ -1,6 +1,6 @@
+#!/user/bin/env python
 # -*- coding: utf-8 -*-
 
-import xlrd, xlwt
 import urllib2
 from xml.dom import minidom
 

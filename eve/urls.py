@@ -6,7 +6,7 @@ admin.autodiscover()
 urlpatterns = patterns('',
     # Examples:
     #url(r'^$', 'eve.views.home', name='home'),
-    url(r'^$', include('calc.urls')),
+    url(r'^calc/$', include('calc.urls', namespace='calc')),
 
     url(r'^admin/', include(admin.site.urls)),
 )
